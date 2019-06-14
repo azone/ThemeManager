@@ -8,12 +8,54 @@
 
 /* Begin PBXBuildFile section */
 		DDFA53BE22B40701004E5D68 /* ThemeManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DDFA53BC22B40701004E5D68 /* ThemeManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DDFA53C522B40715004E5D68 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFA53C422B40715004E5D68 /* ThemeManager.swift */; };
+		DDFA53CD22B407B9004E5D68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFA53CC22B407B9004E5D68 /* AppDelegate.swift */; };
+		DDFA53CF22B407B9004E5D68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFA53CE22B407B9004E5D68 /* ViewController.swift */; };
+		DDFA53D222B407B9004E5D68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDFA53D022B407B9004E5D68 /* Main.storyboard */; };
+		DDFA53D422B407BA004E5D68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDFA53D322B407BA004E5D68 /* Assets.xcassets */; };
+		DDFA53D722B407BA004E5D68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDFA53D522B407BA004E5D68 /* LaunchScreen.storyboard */; };
+		DDFA53DD22B407DC004E5D68 /* MyTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFA53DC22B407DC004E5D68 /* MyTheme.swift */; };
+		DDFA53E322B41C6F004E5D68 /* ThemeManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFA53B922B40701004E5D68 /* ThemeManager.framework */; };
+		DDFA53E422B41C6F004E5D68 /* ThemeManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DDFA53B922B40701004E5D68 /* ThemeManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DDFA53E522B41C6F004E5D68 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDFA53B022B40701004E5D68 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDFA53B822B40701004E5D68;
+			remoteInfo = ThemeManager;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DDFA53E722B41C6F004E5D68 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DDFA53E422B41C6F004E5D68 /* ThemeManager.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DDFA53B922B40701004E5D68 /* ThemeManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThemeManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDFA53BC22B40701004E5D68 /* ThemeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeManager.h; sourceTree = "<group>"; };
 		DDFA53BD22B40701004E5D68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDFA53C422B40715004E5D68 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		DDFA53CA22B407B9004E5D68 /* ThemeManager Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ThemeManager Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDFA53CC22B407B9004E5D68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DDFA53CE22B407B9004E5D68 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DDFA53D122B407B9004E5D68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DDFA53D322B407BA004E5D68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DDFA53D622B407BA004E5D68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DDFA53D822B407BA004E5D68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDFA53DC22B407DC004E5D68 /* MyTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,6 +66,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DDFA53C722B407B9004E5D68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDFA53E322B41C6F004E5D68 /* ThemeManager.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -31,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				DDFA53BB22B40701004E5D68 /* ThemeManager */,
+				DDFA53CB22B407B9004E5D68 /* ThemeManager Example */,
 				DDFA53BA22B40701004E5D68 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -39,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				DDFA53B922B40701004E5D68 /* ThemeManager.framework */,
+				DDFA53CA22B407B9004E5D68 /* ThemeManager Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,8 +100,23 @@
 			children = (
 				DDFA53BC22B40701004E5D68 /* ThemeManager.h */,
 				DDFA53BD22B40701004E5D68 /* Info.plist */,
+				DDFA53C422B40715004E5D68 /* ThemeManager.swift */,
 			);
 			path = ThemeManager;
+			sourceTree = "<group>";
+		};
+		DDFA53CB22B407B9004E5D68 /* ThemeManager Example */ = {
+			isa = PBXGroup;
+			children = (
+				DDFA53CC22B407B9004E5D68 /* AppDelegate.swift */,
+				DDFA53CE22B407B9004E5D68 /* ViewController.swift */,
+				DDFA53D022B407B9004E5D68 /* Main.storyboard */,
+				DDFA53D322B407BA004E5D68 /* Assets.xcassets */,
+				DDFA53D522B407BA004E5D68 /* LaunchScreen.storyboard */,
+				DDFA53D822B407BA004E5D68 /* Info.plist */,
+				DDFA53DC22B407DC004E5D68 /* MyTheme.swift */,
+			);
+			path = "ThemeManager Example";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,16 +151,40 @@
 			productReference = DDFA53B922B40701004E5D68 /* ThemeManager.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		DDFA53C922B407B9004E5D68 /* ThemeManager Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDFA53D922B407BA004E5D68 /* Build configuration list for PBXNativeTarget "ThemeManager Example" */;
+			buildPhases = (
+				DDFA53C622B407B9004E5D68 /* Sources */,
+				DDFA53C722B407B9004E5D68 /* Frameworks */,
+				DDFA53C822B407B9004E5D68 /* Resources */,
+				DDFA53E722B41C6F004E5D68 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDFA53E622B41C6F004E5D68 /* PBXTargetDependency */,
+			);
+			name = "ThemeManager Example";
+			productName = "ThemeManager Example";
+			productReference = DDFA53CA22B407B9004E5D68 /* ThemeManager Example.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		DDFA53B022B40701004E5D68 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "王要正";
 				TargetAttributes = {
 					DDFA53B822B40701004E5D68 = {
+						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
+					};
+					DDFA53C922B407B9004E5D68 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
@@ -104,6 +195,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = DDFA53AF22B40701004E5D68;
 			productRefGroup = DDFA53BA22B40701004E5D68 /* Products */;
@@ -111,6 +203,7 @@
 			projectRoot = "";
 			targets = (
 				DDFA53B822B40701004E5D68 /* ThemeManager */,
+				DDFA53C922B407B9004E5D68 /* ThemeManager Example */,
 			);
 		};
 /* End PBXProject section */
@@ -123,6 +216,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DDFA53C822B407B9004E5D68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDFA53D722B407BA004E5D68 /* LaunchScreen.storyboard in Resources */,
+				DDFA53D422B407BA004E5D68 /* Assets.xcassets in Resources */,
+				DDFA53D222B407B9004E5D68 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -130,10 +233,48 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDFA53C522B40715004E5D68 /* ThemeManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDFA53C622B407B9004E5D68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDFA53DD22B407DC004E5D68 /* MyTheme.swift in Sources */,
+				DDFA53CF22B407B9004E5D68 /* ViewController.swift in Sources */,
+				DDFA53CD22B407B9004E5D68 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DDFA53E622B41C6F004E5D68 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDFA53B822B40701004E5D68 /* ThemeManager */;
+			targetProxy = DDFA53E522B41C6F004E5D68 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DDFA53D022B407B9004E5D68 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDFA53D122B407B9004E5D68 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DDFA53D522B407BA004E5D68 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDFA53D622B407BA004E5D68 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DDFA53BF22B40701004E5D68 /* Debug */ = {
@@ -261,6 +402,7 @@
 		DDFA53C222B40701004E5D68 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -278,6 +420,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cn.firestudio.ThemeManager;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -286,6 +429,7 @@
 		DDFA53C322B40701004E5D68 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -308,6 +452,44 @@
 			};
 			name = Release;
 		};
+		DDFA53DA22B407BA004E5D68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N9K8TVA5CQ;
+				INFOPLIST_FILE = "ThemeManager Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.firestudio.ThemeManager-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DDFA53DB22B407BA004E5D68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N9K8TVA5CQ;
+				INFOPLIST_FILE = "ThemeManager Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.firestudio.ThemeManager-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -325,6 +507,15 @@
 			buildConfigurations = (
 				DDFA53C222B40701004E5D68 /* Debug */,
 				DDFA53C322B40701004E5D68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDFA53D922B407BA004E5D68 /* Build configuration list for PBXNativeTarget "ThemeManager Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDFA53DA22B407BA004E5D68 /* Debug */,
+				DDFA53DB22B407BA004E5D68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
