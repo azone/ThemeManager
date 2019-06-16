@@ -44,6 +44,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DDC39BB622B6187C00549982 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		DDFA53B922B40701004E5D68 /* ThemeManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThemeManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDFA53BC22B40701004E5D68 /* ThemeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeManager.h; sourceTree = "<group>"; };
 		DDFA53BD22B40701004E5D68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,10 +78,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DDFA53AF22B40701004E5D68 = {
+		DDC39BB222B6183300549982 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				DDFA53BB22B40701004E5D68 /* ThemeManager */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		DDFA53AF22B40701004E5D68 = {
+			isa = PBXGroup;
+			children = (
+				DDC39BB622B6187C00549982 /* Package.swift */,
+				DDC39BB222B6183300549982 /* Sources */,
 				DDFA53CB22B407B9004E5D68 /* ThemeManager Example */,
 				DDFA53BA22B40701004E5D68 /* Products */,
 			);
@@ -410,7 +420,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ThemeManager/Info.plist;
+				INFOPLIST_FILE = Sources/ThemeManager/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -437,7 +447,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ThemeManager/Info.plist;
+				INFOPLIST_FILE = Sources/ThemeManager/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
