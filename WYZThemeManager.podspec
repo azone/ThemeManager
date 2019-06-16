@@ -1,5 +1,5 @@
 Pod::Spec.new do |spec|
-  spec.name         = "ThemeManager"
+  spec.name         = "WYZThemeManager"
   spec.version      = "0.1.0"
   spec.summary      = "Most lightweight, powerful, convenient and easiest way to manage your app themes."
   spec.description  = <<-DESC
