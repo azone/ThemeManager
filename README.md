@@ -15,7 +15,7 @@ You can pull the [ThemeManager Github Repo](https://github.com/azone/ThemeManage
 [CocoaPods](https://cocoapods.org/) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate ThemeManager into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-pod 'ThemeManager'
+pod 'WYZThemeManager'
 ```
 
 ### Carthage
