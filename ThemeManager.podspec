@@ -8,14 +8,12 @@ Pod::Spec.new do |spec|
 
   spec.homepage     = "https://github.com/azone/ThemeManager"
   spec.source          = { :git => 'https://github.com/azone/ThemeManager.git', :tag => spec.version }
-  # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
   
-  spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  spec.license      = { :type => "MIT", :file => "LICENSE" }
 
   spec.author             = { "Yozone Wang" => "wangyaozh@gmail.com" }
 
   spec.ios.deployment_target = "8.0"
-  spec.watchos.deployment_target = "2.0"
   spec.tvos.deployment_target = "9.0"
 
   spec.source_files = "Sources/**/*.swift"
