@@ -25,6 +25,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: nil, action: nil)
+
         themeManager.setup(view) { (view, theme) in
             view.backgroundColor = theme.backgroundColor
         }
@@ -57,6 +59,15 @@ class ViewController: UIViewController {
             button.setTitleColor(theme.buttonTitleColor, for: .normal)
             button.setTitleColor(theme.buttonTitleHighlightcolor, for: .highlighted)
         }
+
+        themeManager.setup(navigationItem) { (item, theme) in
+            item.title = theme.title
+        }
+
+        themeManager.setup(navigationController?.navigationBar) { (bar, theme) in
+            bar.tintColor = theme.mainColor
+            bar.barTintColor = theme.backgroundColor
+        }
     }
 
     @IBAction func changeToDefaultTheme(_ sender: Any) {
@@ -72,6 +83,8 @@ class ViewController: UIViewController {
         theme.subtitleFont = .systemFont(ofSize: 12)
         theme.titleFont = .boldSystemFont(ofSize: 24)
         theme.textColor = .blue
+        theme.title = "Theme 1"
+        theme.barTintColor = .orange
         themeManager.apply(theme, animated: withAnimation)
 
     }
@@ -85,6 +98,8 @@ class ViewController: UIViewController {
         theme.subtitleFont = .systemFont(ofSize: 24)
         theme.titleFont = .boldSystemFont(ofSize: 36)
         theme.textColor = .green
+        theme.title = "Theme 2"
+        theme.barTintColor = .brown
         themeManager.apply(theme, animated: withAnimation)
     }
 

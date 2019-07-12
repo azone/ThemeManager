@@ -10,6 +10,7 @@ import UIKit
 import ThemeManager
 
 struct MyTheme: Theme {
+    var barTintColor: UIColor? = nil
     var backgroundColor = UIColor.gray
     var mainColor = UIColor.orange
 
@@ -19,4 +20,6 @@ struct MyTheme: Theme {
 
     var buttonTitleColor = UIColor.orange
     var buttonTitleHighlightcolor = UIColor.red
+
+    var title = "Default Theme"
 }

@@ -1,6 +1,6 @@
 # ThemeManager
 
-ThemeManage is a most lightweight, powerful, convenient and easiest way to manage your app themes.
+ThemeManager is a most lightweight, powerful, convenient and easiest way to manage your app themes, and also support change text(e.g. language) or other configurations dynamically too.
 
 ## Installing ThemeManager
 
@@ -42,7 +42,7 @@ dependencies: [
 
 ## Usage
 
-### 1. implement your self theme (may be class or struct) which must be conform `Theme` protocol.
+### 1. implement your self theme, language or other configuration (may be class, struct or anything you want) which must be conform `Theme` protocol.
 
 Example:
 
@@ -59,6 +59,8 @@ struct MyTheme: Theme {
 
     var buttonTitleColor = UIColor.orange
     var buttonTitleHighlightcolor = UIColor.red
+    
+    var title = "Default Theme"
 }
  ```
 
@@ -70,7 +72,7 @@ Example:
 let themeManager = ThemeManager(MyTheme())
 ```
 
-### 3. Put any theme related UI setups in `setUp` method
+### 3. Put any theme, language or configuration related setups in `setUp` method
 
 Example
 
@@ -78,9 +80,18 @@ Example
 themeManager.setup(view) { (view, theme) in
     view.backgroundColor = theme.backgroundColor
 }
+
+themeManager.setup(navigationItem) { (item, theme) in
+    item.title = theme.title
+}
+
+themeManager.setup(navigationController?.navigationBar) { (bar, theme) in
+    bar.tintColor = theme.mainColor
+    bar.barTintColor = theme.backgroundColor
+}
 ```
 
-### 4. Change another theme with your theme instance:
+### 4. Change another theme, language or configuration with your theme instance:
 
 ```swift
 themeManager.apply(otherTheme)

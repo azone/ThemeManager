@@ -20,64 +20,68 @@ open class ThemeManager<T: Theme> {
     public var animationDuration: TimeInterval = 0.3
 
     public struct ThemeItem {
-        public typealias ApplyBlockType = (UIView, T) -> Void
+        public typealias ApplyBlockType = (AnyObject, T) -> Void
 
-        public private(set) weak var view: UIView?
+        public private(set) weak var item: AnyObject?
         public private(set) var applyBlock: ApplyBlockType
 
-        public init(view: UIView, applyBlock: @escaping ApplyBlockType) {
-            self.view = view
+        public init(item: AnyObject, applyBlock: @escaping ApplyBlockType) {
+            self.item = item
             self.applyBlock = applyBlock
         }
     }
 
     private class DeallocObserver {
-        var viewAddress: Int
+        var itemAddress: Int
 
-        var viewDealloced: ((Int) -> Void)?
+        var itemDealloced: ((Int) -> Void)?
 
         deinit {
-            viewDealloced?(viewAddress)
+            itemDealloced?(itemAddress)
         }
 
-        init(_ viewAddress: Int) {
-            self.viewAddress = viewAddress
+        init(_ itemAddress: Int) {
+            self.itemAddress = itemAddress
         }
     }
 
     private var managedItems = [Int: [ThemeItem]]()
 
-    open func setup<V: UIView>(_ view: V, applyBlock: @escaping (V, T) -> Void) {
-        let viewAddress = unsafeBitCast(view, to: Int.self)
+    open func setup<OBJ: AnyObject>(_ item: OBJ?, applyBlock: @escaping (OBJ, T) -> Void) {
+        guard let item = item else {
+            return
+        }
 
-        let viewDeallocObserver = DeallocObserver(viewAddress)
-        viewDeallocObserver.viewDealloced = {
+        let itemAddress = unsafeBitCast(item, to: Int.self)
+
+        let itemDeallocObserver = DeallocObserver(itemAddress)
+        itemDeallocObserver.itemDealloced = {
             self.managedItems.removeValue(forKey: $0)
         }
-        objc_setAssociatedObject(view, "DeallocObserverKey", viewDeallocObserver, .OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(item, "DeallocObserverKey", itemDeallocObserver, .OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 
-        let themeItem = ThemeItem(view: view) { (view, theme) in
-            applyBlock(view as! V, theme)
+        let themeItem = ThemeItem(item: item) { (item, theme) in
+            applyBlock(item as! OBJ, theme)
         }
-        managedItems[viewAddress, default: []].append(themeItem)
+        managedItems[itemAddress, default: []].append(themeItem)
 
-        applyBlock(view, theme)
+        applyBlock(item, theme)
     }
 
     open func apply(_ theme: T, animated: Bool = true) {
         self.theme = theme
         managedItems.forEach { (_, items) in
             items.forEach { (themeItem) in
-                guard let view = themeItem.view else {
+                guard let item = themeItem.item else {
                     return
                 }
 
-                if animated && view.window != nil {
+                if animated && item.window != nil {
                     UIView.animate(withDuration: animationDuration) {
-                        themeItem.applyBlock(view, theme)
+                        themeItem.applyBlock(item, theme)
                     }
                 } else {
-                    themeItem.applyBlock(view, theme)
+                    themeItem.applyBlock(item, theme)
                 }
             }
         }
