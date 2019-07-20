@@ -76,7 +76,7 @@ open class ThemeManager<T: Theme> {
                     return
                 }
 
-                if animated && item.window != nil {
+                if animated, let view = item as? UIView, view.window != nil {
                     UIView.animate(withDuration: animationDuration) {
                         themeItem.applyBlock(item, theme)
                     }
