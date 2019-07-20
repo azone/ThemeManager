@@ -34,7 +34,7 @@ Once you have your Swift package set up, adding ThemeManager as a dependency is 
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/azone/ThemeManager.git", from: "0.2.0")
+    .package(url: "https://github.com/azone/ThemeManager.git", from: "0.2.1")
 ]
 ```
 
