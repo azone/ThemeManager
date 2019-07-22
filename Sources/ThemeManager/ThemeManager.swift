@@ -8,10 +8,19 @@
 
 import UIKit
 
+extension Notification.Name {
+    static let ThemeDidChange = Notification.Name("ThemeDidChangeNotification")
+}
+
 public protocol Theme {}
 
 open class ThemeManager<T: Theme> {
-    private var theme: T
+
+    open private(set) var theme: T {
+        didSet {
+            NotificationCenter.default.post(name: .ThemeDidChange, object: theme)
+        }
+    }
 
     public init(_ theme: T) {
         self.theme = theme
