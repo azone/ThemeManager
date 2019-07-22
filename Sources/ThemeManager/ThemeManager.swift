@@ -27,6 +27,21 @@ open class ThemeManager<T: Theme> {
     }
 
     public var animationDuration: TimeInterval = 0.3
+    private var internalAnimationBlock: ((@escaping () -> Void) -> Void)?
+    open var animationBlock: (@escaping () -> Void) -> Void {
+        set {
+            internalAnimationBlock = newValue
+        }
+        get {
+            if internalAnimationBlock == nil {
+                internalAnimationBlock = {
+                    UIView.animate(withDuration: self.animationDuration, animations: $0)
+                }
+            }
+
+            return internalAnimationBlock!
+        }
+    }
 
     public struct ThemeItem {
         public typealias ApplyBlockType = (AnyObject, T) -> Void
@@ -86,7 +101,7 @@ open class ThemeManager<T: Theme> {
                 }
 
                 if animated, let view = item as? UIView, view.window != nil {
-                    UIView.animate(withDuration: animationDuration) {
+                    self.animationBlock {
                         themeItem.applyBlock(item, theme)
                     }
                 } else {
