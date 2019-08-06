@@ -9,7 +9,7 @@
 import UIKit
 
 extension Notification.Name {
-    static let ThemeDidChange = Notification.Name("ThemeDidChangeNotification")
+    public static let ThemeDidChange = Notification.Name("ThemeDidChangeNotification")
 }
 
 public protocol Theme {}
