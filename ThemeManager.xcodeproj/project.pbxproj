@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD0A6A5D23111E530045E8FF /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A6A5C23111E530045E8FF /* Config.swift */; };
 		DDFA53BE22B40701004E5D68 /* ThemeManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DDFA53BC22B40701004E5D68 /* ThemeManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DDFA53C522B40715004E5D68 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFA53C422B40715004E5D68 /* ThemeManager.swift */; };
 		DDFA53CD22B407B9004E5D68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFA53CC22B407B9004E5D68 /* AppDelegate.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DD0A6A5C23111E530045E8FF /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		DDC39BB622B6187C00549982 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		DDFA53B922B40701004E5D68 /* ThemeManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThemeManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDFA53BC22B40701004E5D68 /* ThemeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeManager.h; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				DDFA53D522B407BA004E5D68 /* LaunchScreen.storyboard */,
 				DDFA53D822B407BA004E5D68 /* Info.plist */,
 				DDFA53DC22B407DC004E5D68 /* MyTheme.swift */,
+				DD0A6A5C23111E530045E8FF /* Config.swift */,
 			);
 			path = "ThemeManager Example";
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDFA53DD22B407DC004E5D68 /* MyTheme.swift in Sources */,
+				DD0A6A5D23111E530045E8FF /* Config.swift in Sources */,
 				DDFA53CF22B407B9004E5D68 /* ViewController.swift in Sources */,
 				DDFA53CD22B407B9004E5D68 /* AppDelegate.swift in Sources */,
 			);

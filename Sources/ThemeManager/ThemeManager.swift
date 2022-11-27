@@ -7,6 +7,9 @@
 //
 
 import UIKit
+#if canImport(Combine)
+import Combine
+#endif
 
 extension Notification.Name {
     public static let ThemeDidChange = Notification.Name("ThemeDidChangeNotification")
@@ -18,7 +21,10 @@ open class ThemeManager<T: Theme> {
 
     open private(set) var theme: T {
         didSet {
-            NotificationCenter.default.post(name: .ThemeDidChange, object: theme)
+            NotificationCenter.default.post(name: .ThemeDidChange, object: self)
+            if #available(iOS 13, *) {
+                currentThemeSubject.send(theme)
+            }
         }
     }
 
@@ -41,6 +47,25 @@ open class ThemeManager<T: Theme> {
 
             return internalAnimationBlock!
         }
+    }
+
+    // MARK: Combine support
+    private var _currentThemeSubject: Any?
+    @available(iOS 13, *)
+    private var currentThemeSubject: CurrentValueSubject<T, Never> {
+        let subject: CurrentValueSubject<T, Never>
+        if let _currentThemeSubject = _currentThemeSubject as? CurrentValueSubject<T, Never> {
+            subject = _currentThemeSubject
+        } else {
+            subject = CurrentValueSubject<T, Never>(theme)
+            _currentThemeSubject = subject
+        }
+
+        return subject
+    }
+    @available(iOS 13, *)
+    public var publisher: AnyPublisher<T, Never> {
+        currentThemeSubject.eraseToAnyPublisher()
     }
 
     public struct ThemeItem {

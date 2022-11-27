@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import ThemeManager
-
-let themeManager = ThemeManager(MyTheme())
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

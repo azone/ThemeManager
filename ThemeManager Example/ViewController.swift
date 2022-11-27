@@ -8,6 +8,7 @@
 
 import UIKit
 import ThemeManager
+import Combine
 
 class ViewController: UIViewController {
 
@@ -20,12 +21,21 @@ class ViewController: UIViewController {
 
     var withAnimation = true
 
+    private var themeCancellable: Any?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: nil, action: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(themeChanged(_:)), name: .ThemeDidChange, object: nil)
+
+        let themeManager = Config.themeManager
+        themeManager.animationBlock = {
+            UIView.animate(withDuration: 0.3, animations: $0)
+        }
 
         themeManager.setup(view) { (view, theme) in
             view.backgroundColor = theme.backgroundColor
@@ -55,9 +65,18 @@ class ViewController: UIViewController {
             button.setTitleColor(theme.buttonTitleHighlightcolor, for: .highlighted)
         }
 
-        themeManager.setup(theme2Button) { (button, theme) in
-            button.setTitleColor(theme.buttonTitleColor, for: .normal)
-            button.setTitleColor(theme.buttonTitleHighlightcolor, for: .highlighted)
+        if #available(iOS 13.0, *) {
+            themeCancellable = themeManager.publisher
+                .sink { [weak self] theme in
+                    guard let self = self else { return }
+                    self.theme2Button.setTitleColor(theme.buttonTitleColor, for: .normal)
+                    self.theme2Button.setTitleColor(theme.buttonTitleHighlightcolor, for: .highlighted)
+                }
+        } else {
+            themeManager.setup(theme2Button) { (button, theme) in
+                button.setTitleColor(theme.buttonTitleColor, for: .normal)
+                button.setTitleColor(theme.buttonTitleHighlightcolor, for: .highlighted)
+            }
         }
 
         themeManager.setup(navigationItem) { (item, theme) in
@@ -70,8 +89,11 @@ class ViewController: UIViewController {
         }
     }
 
+    @objc func themeChanged(_ notification: Notification) {
+    }
+
     @IBAction func changeToDefaultTheme(_ sender: Any) {
-        themeManager.apply(MyTheme(), animated: withAnimation)
+        Config.themeManager.apply(MyTheme(), animated: withAnimation)
     }
 
     @IBAction func changeToTheme1(_ sender: Any) {
@@ -85,7 +107,7 @@ class ViewController: UIViewController {
         theme.textColor = .blue
         theme.title = "Theme 1"
         theme.barTintColor = .orange
-        themeManager.apply(theme, animated: withAnimation)
+        Config.themeManager.apply(theme, animated: withAnimation)
 
     }
 
@@ -100,7 +122,7 @@ class ViewController: UIViewController {
         theme.textColor = .green
         theme.title = "Theme 2"
         theme.barTintColor = .brown
-        themeManager.apply(theme, animated: withAnimation)
+        Config.themeManager.apply(theme, animated: withAnimation)
     }
 
     @IBAction func switched(_ sender: UISwitch) {
